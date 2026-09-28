@@ -2,6 +2,8 @@
 
 **$1,000 Painting — Where Does the Money Go?**
 
+🎨 **Live:** https://maanas-pab.github.io/art-money-flow/
+
 An interactive flow-painting that traces a single $1,000 artwork sale as abstract
 rivers — from the buyer's wall back to the artist, gallery, and everyone in
 between.
