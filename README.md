@@ -40,6 +40,21 @@ python3 -m http.server 8000
 
 Then open http://localhost:8000 (or `:3000` for `serve`).
 
+## Validate the data
+
+```bash
+node scripts/validate.mjs
+```
+
+Checks six streams that sum to exactly 1.0. CI runs this before every
+Pages deploy.
+
+## Make it yours
+
+Edit [`data/breakdown.json`](data/breakdown.json) — shares, colors, blurbs —
+and the sankey, cards, and tooltips repaint automatically. See
+[`docs/METHODOLOGY.md`](docs/METHODOLOGY.md) for the model's assumptions.
+
 ## Structure
 
 ```
