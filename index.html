@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>$1,000 Painting — Where Does the Money Go?</title>
+  <meta name="description" content="An interactive flow-painting tracing a $1,000 artwork sale as abstract rivers: gallery, artist, tax, fees, shipping, materials." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <canvas id="grain" aria-hidden="true"></canvas>
+
+  <header class="hero">
+    <p class="kicker">An interactive flow-painting · one dataset</p>
+    <h1>$1,000 Painting<br /><span>Where does the money go?</span></h1>
+    <p class="lede">
+      You sell an artwork for <strong id="hero-price">$1,000</strong>.
+      Watch it split into rivers — the gallery takes the widest one.
+      Hover any stream to feel its weight.
+    </p>
+
+    <div class="controls" role="group" aria-label="Sale price controls">
+      <label for="price">
+        Sale price <output id="price-output" for="price">$1,000</output>
+      </label>
+      <input id="price" type="range" min="500" max="5000" step="50" value="1000" />
+      <div class="control-buttons">
+        <button id="replay" type="button">↻ Replay flow</button>
+        <button id="toggle-motion" type="button" aria-pressed="false">Pause drift</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="painting" aria-label="Flow painting">
+      <div id="river-wrap">
+        <svg id="river" role="img" aria-label="Sankey flow diagram of the painting sale"></svg>
+        <div id="tooltip" class="tooltip" hidden></div>
+      </div>
+      <p class="caption">
+        Each river's width is proportional to dollars. Data:
+        <a href="data/breakdown.json">breakdown.json</a>
+      </p>
+    </section>
+
+    <section class="cards" aria-label="Breakdown">
+      <h2>The six rivers</h2>
+      <div id="cards" class="card-grid"></div>
+    </section>
+
+    <section class="about">
+      <div>
+        <h2>Why this split?</h2>
+        <p>
+          The 50% gallery / 15% artist cut is the textbook commercial model —
+          loved by gallerists, mourned by painters. Materials, the actual
+          physical painting, are the thinnest river at 5%. This piece makes
+          that imbalance visceral: you don't read the numbers, you watch
+          the artist's stream run dry.
+        </p>
+      </div>
+      <div>
+        <h2>How to read it</h2>
+        <ol>
+          <li><strong>Width = money.</strong> Twice as wide, twice as many dollars.</li>
+          <li><strong>Hover</strong> any river to isolate it and read its story.</li>
+          <li><strong>Drag the price slider</strong> — the whole painting re-flows.</li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      Painted with D3 + p5 from a single JSON file ·
+      <a href="https://github.com/maanas-pab/art-money-flow">source</a> ·
+      MIT
+    </p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3-sankey@0.12/dist/d3-sankey.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.4/lib/p5.min.js"></script>
+  <script src="js/rivers.js"></script>
+  <script src="js/ambient.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
