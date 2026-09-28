@@ -1,0 +1,65 @@
+{
+  "title": "$1,000 Painting — Where Does the Money Go?",
+  "sale": {
+    "amount": 1000,
+    "currency": "USD",
+    "label": "One painting sold",
+    "note": "A single $1,000 gallery sale. Move the slider and every river re-scales."
+  },
+  "streams": [
+    {
+      "id": "gallery",
+      "label": "Gallery",
+      "share": 0.5,
+      "color": "#7c5cbf",
+      "blurb": "Rent, staff, openings, the white wall the work hung on. The classic 50% cut.",
+      "detail": "Commercial galleries typically take 40–60%. 50% is the textbook split this piece interrogates."
+    },
+    {
+      "id": "artist",
+      "label": "Artist",
+      "share": 0.15,
+      "color": "#e4572e",
+      "blurb": "The painter's take-home before income tax. Fifteen cents on the dollar.",
+      "detail": "After months of work, the artist keeps $150 of the $1,000 sale in this model."
+    },
+    {
+      "id": "tax",
+      "label": "Sales tax / VAT",
+      "share": 0.12,
+      "color": "#2e86ab",
+      "blurb": "Collected at checkout, remitted to the state. Varies by city.",
+      "detail": "Modeled at 12% as a blended US sales-tax stand-in. Real rates run ~0–15% worldwide."
+    },
+    {
+      "id": "fees",
+      "label": "Payment + insurance",
+      "share": 0.1,
+      "color": "#f3a712",
+      "blurb": "Card processing plus transit and exhibition insurance.",
+      "detail": "~3% card fees plus ~7% crating insurance, art-handler coverage and platform fees."
+    },
+    {
+      "id": "shipping",
+      "label": "Shipping + handling",
+      "share": 0.08,
+      "color": "#3fb950",
+      "blurb": "Crating, courier, last-mile delivery to the buyer.",
+      "detail": "Domestic crated shipping for a mid-size canvas. International can easily double this."
+    },
+    {
+      "id": "materials",
+      "label": "Materials",
+      "share": 0.05,
+      "color": "#4caf7d",
+      "blurb": "Paint, canvas, stretchers, varnish. The physical painting itself.",
+      "detail": "Oils and linen are pricey, yet the object is the thinnest river of all."
+    }
+  ],
+  "meta": {
+    "sumsTo": 1.0,
+    "model": "50/15 commercial-gallery split with blended US costs",
+    "caveats": "Illustrative, not an invoice. Real splits vary by contract, city, and tax regime.",
+    "updated": "2026-09-28"
+  }
+}
