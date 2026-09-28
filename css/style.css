@@ -10,6 +10,25 @@
   --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif;
 }
 
+.skip {
+  position: absolute;
+  left: 16px;
+  top: -48px;
+  z-index: 5;
+  background: #f4f1ea;
+  color: #101014;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: top 0.2s ease;
+}
+
+.skip:focus { top: 12px; }
+
+button:focus-visible, .card:focus-visible, input[type="range"]:focus-visible {
+  outline: 2px solid #f3a712;
+  outline-offset: 2px;
+}
+
 * { box-sizing: border-box; }
 
 body {
@@ -218,6 +237,8 @@ footer {
 @media (max-width: 760px) {
   .about { grid-template-columns: 1fr; }
   .hero { padding-top: 48px; }
+  .node text { font-size: 11px; }
+  .painting { padding: 10px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

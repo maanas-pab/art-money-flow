@@ -5,9 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>$1,000 Painting — Where Does the Money Go?</title>
   <meta name="description" content="An interactive flow-painting tracing a $1,000 artwork sale as abstract rivers: gallery, artist, tax, fees, shipping, materials." />
+  <meta name="theme-color" content="#101014" />
+  <meta property="og:title" content="$1,000 Painting — Where Does the Money Go?" />
+  <meta property="og:description" content="Six rivers, one sale. Hover the flows, drag the price, feel the split." />
+  <meta property="og:type" content="website" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+  <a class="skip" href="#river-wrap">Skip to the painting</a>
   <canvas id="grain" aria-hidden="true"></canvas>
 
   <header class="hero">
@@ -39,7 +44,8 @@
       </div>
       <p class="caption">
         Each river's width is proportional to dollars. Data:
-        <a href="data/breakdown.json">breakdown.json</a>
+        <a href="data/breakdown.json">breakdown.json</a> ·
+        <a href="docs/METHODOLOGY.md">methodology</a>
       </p>
     </section>
 
