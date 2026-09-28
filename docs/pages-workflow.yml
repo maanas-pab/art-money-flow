@@ -1,0 +1,55 @@
+# GitHub Pages workflow — STAGED, not yet live.
+#
+# Why is this in docs/ instead of .github/workflows/?
+# The Mac's stored GitHub credential is an OAuth App token without the
+# `workflow` scope, and GitHub refuses workflow-file pushes from such tokens.
+# To enable Pages deploys, move this file to `.github/workflows/pages.yml`
+# via the GitHub web UI (Add file → Create new file, paste, commit), or push
+# it from a login with the `workflow` scope:
+#
+#   git mv docs/pages-workflow.yml .github/workflows/pages.yml
+#   git commit -m "chore: enable Pages deploy"
+#   git push
+#
+# Then: repo Settings → Pages → Source: GitHub Actions.
+
+name: pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node scripts/validate.mjs
+
+  deploy:
+    needs: validate
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: deployment
+        uses: actions/deploy-pages@v4
